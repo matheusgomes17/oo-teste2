@@ -1,21 +1,17 @@
 <?php
-//Chamada do autoload
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+date_default_timezone_set('America/Sao_Paulo');
+
 require_once "../autoload.php";
 
-$conn = new \app\Database\Connection('localhost', 'poo', 'root', 'root');
+$conn = new \SON\Database\Connection(HOST, DBNAME, USER, PASS);
 $db = $conn->connect();
-
-$fixture = new \app\Fixtures\Cliente\Fixture($db);
-$fixture->createTables();
-$fixture->insert();
-
 
 $stmt = $db->prepare("SELECT * FROM clientes ORDER BY id ASC ");
 $stmt->execute();
 
 $clientes = $stmt->fetchAll(PDO::FETCH_OBJ);
-
-
 
 if (isset($_GET['order']) && $_GET['order'] == 'desc') {
     krsort($clientes);
@@ -28,16 +24,15 @@ foreach ($clientes as $cliente) {
         $estrelas.="<i class=\"glyphicon glyphicon-star\"></i>";
     }
     $listaClientes.="
-                        <tr>
-                            <td>$cliente->id</td>
-                            <td>" . $cliente->nome . "</td>
-                            <td>" . $cliente->telefone . "</td>
-                            <td>$estrelas</td>
-                            <td>" . $cliente->tipo . "</td>
-                        </tr>
-                    ";
+        <tr>
+            <td>$cliente->id</td>
+            <td>" . $cliente->nome . "</td>
+            <td>" . $cliente->telefone . "</td>
+            <td>$estrelas</td>
+            <td>" . $cliente->tipo . "</td>
+        </tr>
+    ";
 }
-
 
 if (isset($_GET['id'])) {
     $stmt = $db->prepare("SELECT * FROM clientes WHERE id = :id ORDER BY id ASC ");
@@ -53,8 +48,6 @@ if (isset($_GET['id'])) {
     $arrayEnderecos = $stmt->fetchAll(PDO::FETCH_OBJ);
 }
 
-
-$fixture->dropTables();
 $conn->disconnect()
 ?>
 <!DOCTYPE html>
@@ -83,7 +76,7 @@ $conn->disconnect()
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">Orientação a Objetos - Trabalho 2</a>
+                    <a class="navbar-brand" href="index.php">Orientação a Objetos - Trabalho 4</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

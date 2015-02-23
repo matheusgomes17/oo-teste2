@@ -1,8 +1,8 @@
 <?php
 
-namespace app\Cliente;
+namespace SON\Cliente;
 
-use app\Cliente\Interfaces\ClienteInterface;
+use SON\Cliente\Interfaces\ClienteInterface;
 
 abstract class ClienteAbstract implements ClienteInterface {
 
@@ -55,7 +55,6 @@ abstract class ClienteAbstract implements ClienteInterface {
 
     public function getTelefone() {
         return $this->telefone;
-        return $this;
     }
 
     public function setEstrelas($estrelas) {

@@ -1,10 +1,11 @@
 <?php
 
-namespace app\Cliente\Types;
+namespace SON\Cliente\Types;
 
-use app\Cliente\ClienteAbstract;
+use SON\Cliente\ClienteAbstract;
+use SON\Cliente\Interfaces\PessoaJuridicaInterface;
 
-class PessoaJuridica extends ClienteAbstract {
+class PessoaJuridica extends ClienteAbstract implements PessoaJuridicaInterface {
 
     private $cnpj;
     private $ie;

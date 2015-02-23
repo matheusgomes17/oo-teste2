@@ -1,4 +1,8 @@
 <?php
+define("HOST", "localhost");
+define("DBNAME", "cursopoo");
+define("USER", "root");
+define("PASS", "root");
 
 define("CLASS_DIR", __DIR__ . DIRECTORY_SEPARATOR . "src" . DIRECTORY_SEPARATOR);
 

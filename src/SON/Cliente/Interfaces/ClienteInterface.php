@@ -1,8 +1,8 @@
 <?php
 
-namespace app\Cliente\Interfaces;
+namespace SON\Cliente\Interfaces;
 
-use app\Cliente\Endereco;
+use SON\Cliente\Endereco;
 
 interface ClienteInterface {
 

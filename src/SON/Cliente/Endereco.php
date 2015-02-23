@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Cliente;
+namespace SON\Cliente;
 
 class Endereco {
 

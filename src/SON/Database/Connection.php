@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Database;
+namespace SON\Database;
 
 class Connection {
 

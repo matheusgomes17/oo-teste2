@@ -1,9 +1,9 @@
 <?php
 
-namespace app\Database;
+namespace SON\Database;
 
-use \app\Cliente\ClienteAbstract;
-use app\Cliente\Types\PessoaFisica;
+use \SON\Cliente\ClienteAbstract;
+use SON\Cliente\Types\PessoaFisica;
 
 class EntityManager {
 
@@ -15,8 +15,6 @@ class EntityManager {
 
     public function persist(ClienteAbstract $cliente) {
         try {
-
-            $this->db->beginTransaction();
 
             if ($cliente instanceof PessoaFisica) {
 
