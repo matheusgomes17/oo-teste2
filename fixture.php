@@ -26,7 +26,8 @@ function criarDb() {
                 tipo VARCHAR(45) NULL,
                 cpf VARCHAR(45) NULL,
                 cnpj VARCHAR(45) NULL,
-                ie VARCHAR(45) NULL);";
+                ie VARCHAR(45) NULL,
+                PRIMARY KEY (id));";
         $pdo->exec($tabl);
         print("A tabela {$table1} foi criada com sucesso!<br>");
         $tab2 = "DROP TABLE IF EXISTS {$table2};
@@ -37,7 +38,8 @@ function criarDb() {
                 numero INT NULL,
                 cidade VARCHAR(255) NULL,
                 estado VARCHAR(255) NULL,
-                cep VARCHAR(45) NULL);";
+                cep VARCHAR(45) NULL,
+                PRIMARY KEY (id));";
         $pdo->exec($tab2);
         print("A tabela {$table2} foi criada com sucesso!<br>");
     } catch (PDOException $e) {
