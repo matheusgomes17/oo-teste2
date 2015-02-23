@@ -1,22 +1,24 @@
-<h1>Projeto 2 - PHP Orientação a Objetos</h1>
-<h2>Tipos de clientes</h2>
+<h1>Projeto 4 - PHP Orientação a Objetos</h1>
+<h2>Persistência de dados</h2>
 
-- Agora que você já tem seu cadastro de cliente, você deverá também aceitar clientes Pessoa Jurídica em sua listagem.
+- Nessa última fase do projeto, você, ao invés de trabalhar com arrays, você deverá persistir essas informações no banco de dados.
 
-- Não se esqueça de trabalhar com os modificadores de acesso e os getters e setters.
+- Em suas fixtures, você deverá criar uma classe com métodos específicos para persistirem dados no banco. Você terá que injetar no construtor dessa classe um objeto PDO (somente PDO).
 
-- No momento da listagem dos clientes, você deve indicar em uma das colunas se o cliente é pessoa física ou jurídica.
+- Crie um método chamado persist dentro dessa mesma classe; esse método deverá receber como dependência um objeto do tipo Cliente.
 
-- Ambos os tipos devem implementar uma interface onde seja possível classificar o grau de importância do cliente para a empresa (ex: cliente 1,2,3,5 estrelas).
+- E para finalizar, crie um método chamado flush. Quando o método for executado, os dados devem ser persistidos no banco de dados.
 
-- Você também terá a opção de criar clientes que utilizão endereço específico de cobrança, nesse caso, crie uma interface para que esses tipos de clientes possam implementar.
+- Perceba que a responsabilidade de gravar os dados no banco são especificamente dessa classe, sem adicionar nenhuma outra responsabilidade a ela.
+
+Boa sorte!
+
+PS: Depois disso implementado, a listagem dos clientes devem ser chamadas a partir do banco de dados e não mais de um conjunto de arrays.
 
 <h2>Como usar</h2>
 
 - Tenha certeza que tenha instalado o PHP5. Em versões inferiores o sistema poderá ocorrer erros.
-
-- Execute o comando no Git Hub: <b>php -S localhost:8090 -t public</b>
-
-- Para adicionar um cliente acesse a pasta <b>src/app/Fixtures/Cliente/Fixture.php</b>.
-
-- O sistema faz conexão com o banco de dados. Usuario "<b>root</b>" e senha "<b>root</b>".
+- Execute o comando no Git: <b>php fixture.php</b> para inserir o banco de dados e suas tabelas.
+- Execute o comando no Git: <b>php -S localhost:8090 -t public</b>
+- Para fazer a conecção com o banco de dados basta alterar as constantes no arquivo <b>autoload.php</b>
+(dados padrões para o acesso user: <b>root</b> password: <b>root</b>)
